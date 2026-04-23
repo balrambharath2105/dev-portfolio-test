@@ -27,6 +27,9 @@ public class SeleniumUITest {
     public void setUp() {
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--headless");
+        options.addArguments("--no-remote");
+        options.addArguments("--window-size=1920,1080");
+        
         driver = new FirefoxDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
